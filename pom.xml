@@ -24,6 +24,25 @@
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<java.version>1.8</java.version>
 	</properties>
+	<!-- from openshift tasks-->
+    <repositories>
+        <repository>
+            <id>openshift-repository</id>
+            <url>https://mirror.openshift.com/nexus/content/groups/public</url>
+        </repository>
+    </repositories>
+
+    <distributionManagement>
+        <repository>
+            <id>nexus</id>
+            <url>http://nexus:8081/content/repositories/releases</url>
+        </repository>
+        <snapshotRepository>
+            <id>nexus</id>
+            <url>http://nexus:8081/content/repositories/snapshots</url>
+        </snapshotRepository>
+    </distributionManagement>
+	<!-- from openshift tasks-->
 
 	<dependencies>
 		<dependency>
