@@ -12,7 +12,7 @@ spec:
       jenkinsfile: |-
         node('maven') {
             stage 'build'
-            openshiftBuild(buildConfig: 'tasks', showBuildLogs: 'true')
+            openshiftBuild(buildConfig: 'swagger-tasks', showBuildLogs: 'true')
 
             stage 'deploy'
             openshiftDeploy(deploymentConfig: 'swagger-tasks')
