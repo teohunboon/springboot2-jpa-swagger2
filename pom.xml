@@ -35,11 +35,11 @@
     <distributionManagement>
         <repository>
             <id>nexus</id>
-            <url>http://nexus:8081/content/repositories/releases</url>
+            <url>http://nexus:8081/repository/maven-releases/</url>
         </repository>
         <snapshotRepository>
             <id>nexus</id>
-            <url>http://nexus:8081/content/repositories/snapshots</url>
+            <url>http://nexus:8081/repository/maven-snapshots</url>
         </snapshotRepository>
     </distributionManagement>
 	<!-- from openshift tasks-->
@@ -99,6 +99,18 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
-        </plugins>
+			<!--- nexus plugin -->
+			<plugin>
+			  <groupId>org.sonatype.plugins</groupId>
+			  <artifactId>nexus-staging-maven-plugin</artifactId>
+			  <version>1.6.8</version>
+			  <extensions>true</extensions>
+			  <configuration>
+				<serverId>nexus</serverId>
+				<nexusUrl>http://nexus:8081/nexus/</nexusUrl>
+			  </configuration>
+			</plugin>
+			<!--- nexus plugin -->					
+			</plugins>
 	</build>
 </project>
